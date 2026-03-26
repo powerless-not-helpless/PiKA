@@ -102,8 +102,10 @@ class InboxHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         filepath = Path(event.src_path)
-        # Ignore hidden files and lockfiles
+        # Ignore hidden files, lockfiles, and extracted text sidecars
         if filepath.name.startswith(".") or filepath.suffix == ".lock":
+            return
+        if filepath.stem.endswith("_extracted") and filepath.suffix == ".txt":
             return
         print(f"[Libby] Detected: {filepath.name}")
         time.sleep(0.5)  # brief pause — let the file finish writing
