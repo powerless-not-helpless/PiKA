@@ -69,13 +69,12 @@ entity_links     — relationships between any two entities
 
 ### On File Drop
 1. Detect via watchdog `on_created`
-2. Lock immediately — `status = processing`
-3. Extract text (`.txt`, `.md`, `.pdf`, `.docx`)
-4. Call Claude API for summary and tags
-5. Write record to `documents` table
+2. Skip hidden files, lockfiles, and `_extracted.txt` sidecars
+3. Lock immediately — `status = processing`
+4. Route to correct parser via `doc_dispatch.py` (PDF, DOCX, PPTX, XLSX, ODT, images, CSV, HTML, and more)
+5. Write record to `documents` table with extracted content
 6. Move file to `Library/documents/`
-7. Update FTS5 index
-8. Mark `status = done`
+7. Mark `status = done`
 
 ### On Query
 1. Receive query with parameters (keyword, tag, type, date, agent)
@@ -96,16 +95,23 @@ entity_links     — relationships between any two entities
 |---|---|
 | SQLite + FTS5 | Database and full-text search |
 | Python `watchdog` | Inbox file monitoring |
-| `pypdf` / `pdfplumber` | PDF extraction |
-| `python-docx` | Word doc extraction |
+| `doc_dispatch.py` | File-type dispatcher — routes to correct parser |
+| `pymupdf` / `pdfplumber` | PDF extraction |
+| `python-docx` / `mammoth` | Word doc extraction |
+| `python-pptx` | PowerPoint extraction |
+| `openpyxl` / `xlrd` | Excel extraction |
+| `odfpy` | OpenDocument (ODT, ODS) extraction |
+| `pytesseract` / `pillow` | OCR for images and scanned docs |
+| `pandas` | CSV and tabular data |
 | `pathlib` / `shutil` | File operations |
-| Claude API | Summarization and auto-tagging |
 
 ---
 
 ## Script Location
 ```
-PKA/.scripts/libby_watch.py
+PKA/.scripts/libby_init.py    — bootstraps folders and pka.db schema
+PKA/.scripts/libby_watch.py   — inbox watchdog and ingestion pipeline
+PKA/.scripts/doc_dispatch.py  — file-type dispatcher (all parser logic)
 ```
 
 ---
