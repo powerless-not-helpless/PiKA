@@ -1,0 +1,36 @@
+{
+  "project": "PKA",
+  "owner": "John",
+  "model": "claude-sonnet-4-6",
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport sys, re, os\npath = sys.argv[1] if len(sys.argv) > 1 else os.environ.get('TOOL_INPUT_FILE_PATH', '')\nif 'Inbox' in path:\n    name = os.path.basename(path)\n    if not re.match(r'\\\\d{4}-\\\\d{2}-\\\\d{2}_\\\\w+_.+\\\\.md', name):\n        print(f'WARNING: {name} does not follow YYYY-MM-DD_Name_Title.md convention')\n\" \"$TOOL_INPUT_FILE_PATH\""
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'if echo \"$TOOL_INPUT_FILE_PATH\" | grep -q \"ORCHESTRATOR.md\"; then echo \"REMINDER: Did you also update Team/roster.md?\"; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}
