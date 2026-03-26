@@ -2,12 +2,17 @@
 # libby_watch.py — Libby's Inbox watchdog
 # Monitors ./Library/Inbox/ and triggers ingestion on new file drops
 
+import sys
 import time
 import sqlite3
 import shutil
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+
+# Pull in doc_dispatch from PKA root
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from doc_dispatch import DISPATCH as DOC_DISPATCH
 
 # --- Paths ---
 BASE_DIR = Path(__file__).parent.parent  # .scripts/ → PKA/
@@ -59,12 +64,12 @@ def ingest_file(filepath: Path):
     conn.commit()
 
     try:
-        # Read content (text files for now)
-        content = ""
-        if filepath.suffix in [".txt", ".md"]:
-            content = filepath.read_text(encoding="utf-8", errors="ignore")
+        # Extract content via doc_dispatch
+        handler_fn = DOC_DISPATCH.get(filepath.suffix.lower())
+        if handler_fn:
+            content = handler_fn(str(filepath))
         else:
-            content = f"[Binary file — {filepath.suffix} — manual review needed]"
+            content = f"[Unsupported type — {filepath.suffix} — manual review needed]"
 
         # Move to documents/
         dest = DOCS_DIR / filename
