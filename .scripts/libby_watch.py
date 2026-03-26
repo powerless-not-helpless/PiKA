@@ -10,8 +10,8 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-# Pull in doc_dispatch from PKA root
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Pull in doc_dispatch from same directory (.scripts/)
+sys.path.insert(0, str(Path(__file__).parent))
 from doc_dispatch import DISPATCH as DOC_DISPATCH
 
 # --- Paths ---
