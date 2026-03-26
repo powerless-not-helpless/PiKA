@@ -9,3 +9,4 @@
 | Dex   | Operations Manager | SOPs, task tracking, status reports, inbox management, end-of-week reviews | Active  | 2026-03-25 |
 | Coda   | Software Engineer  | Full-stack development, automation, debugging, API integrations             | Active  | 2026-03-25 |
 | Vesper | Strategic Analyst  | Decision analysis, competitive research, strategy memos, frameworks         | Active  | 2026-03-25 |
+| Libby | Librarian & Records Keeper | Document ingestion, full-text search, database ownership, CRM, project tracking, agent work logs | Active | 2026-03-26 |

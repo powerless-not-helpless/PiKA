@@ -35,3 +35,9 @@ Pax is meticulous, intellectually curious, and thorough. She never skips steps. 
 ### What separates good from great
 ### Suggested name & persona notes for Nolan
 ```
+
+## Libby Access
+- Query: sqlite3 ./data/pka.db or via libby query tool
+- Can READ: documents, contacts, projects, tasks, tags, entity_links
+- Can WRITE: interactions, journal_entries, agent_work_log
+- Schema changes: Libby only — request via Pika

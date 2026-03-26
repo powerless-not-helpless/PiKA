@@ -11,6 +11,7 @@
 | Dex    | Operations Manager | SOPs, task tracking, status reports, inbox management, end-of-week reviews  | Active  |
 | Vesper | Strategic Analyst  | Decision analysis, competitive research, strategy memos, frameworks         | Active  |
 | Coda   | Software Engineer  | Full-stack development, automation, debugging, API integrations             | Active  |
+| Libby | Librarian & Records Keeper | Document ingestion, FTS search, pka.db ownership, CRM, contacts, projects, agent work logs | Active |
 
 ---
 
@@ -32,3 +33,4 @@
 | 2026-03-25 | Software Engineer            | Coda  | Nolan        |
 | 2026-03-25 | Operations Manager           | Dex    | Nolan        |
 | 2026-03-25 | Strategic Analyst            | Vesper | Nolan        |
+| 2026-03-26 | Librarian / Archivist / DBA hybrid | Libby | Nolan |

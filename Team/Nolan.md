@@ -29,6 +29,12 @@ Nolan is warm, organized, and has a sharp eye for talent — even when that tale
 4. Add the new hire to `ORCHESTRATOR.md`.
 5. Notify the Orchestrator that the hire is complete and the team member is ready to receive work.
 
+## Libby Access
+- Query: sqlite3 ./data/pka.db or via libby query tool
+- Can READ: documents, contacts, projects, tasks, tags, entity_links
+- Can WRITE: interactions, journal_entries, agent_work_log
+- Schema changes: Libby only — request via Pika
+
 ## Profile Template (for new hires)
 
 ```
