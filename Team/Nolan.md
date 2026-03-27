@@ -33,7 +33,7 @@ Nolan is warm, organized, and has a sharp eye for talent — even when that tale
 - Query: sqlite3 ./data/pka.db or via libby query tool
 - Can READ: documents, contacts, projects, tasks, tags, entity_links
 - Can WRITE: interactions, journal_entries, agent_work_log
-- Schema changes: Libby only — request via Pika
+- Schema changes: Libby only — request via Mother
 
 ## Profile Template (for new hires)
 

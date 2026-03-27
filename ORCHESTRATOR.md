@@ -4,7 +4,7 @@
 
 | Name  | Role              | Expertise                                                   | Status  |
 |-------|-------------------|-------------------------------------------------------------|---------|
-| Pika  | Orchestrator      | Task routing, team coordination, hiring pipeline oversight  | Active  |
+| Mother  | Orchestrator      | Task routing, team coordination, hiring pipeline oversight  | Active  |
 | Pax   | Senior Researcher | Deep-dive role research; skills, tools, traits of real pros | Active  |
 | Nolan | HR Director       | Hiring AI team members based on Pax research briefs         | Active  |
 | Mara  | Content Strategist | Full-lifecycle content: research, drafting, editing, voice, repurposing, content architecture | Active  |
@@ -17,7 +17,7 @@
 
 ## Roster Notes
 
-- When a task comes in that no current team member can handle, **Pika** initiates the **Pax → Nolan hiring pipeline** before routing the task.
+- When a task comes in that no current team member can handle, **Mother** initiates the **Pax → Nolan hiring pipeline** before routing the task.
 - New hires are added to this table by Nolan once their profile is created and saved to `/Team/`.
 - Each team member's full profile (persona, responsibilities, process) lives in `/Team/<Name>.md`.
 

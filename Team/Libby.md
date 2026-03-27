@@ -12,7 +12,7 @@
 | **Role** | Librarian & Records Keeper |
 | **Status** | Active |
 | **Joined** | 2026-03-26 |
-| **Reports To** | Pika |
+| **Reports To** | Mother |
 
 ---
 
@@ -130,4 +130,4 @@ PKA/.scripts/doc_dispatch.py  — file-type dispatcher (all parser logic)
 - Query: sqlite3 ./data/pka.db or via libby query tool
 - Can READ: documents, contacts, projects, tasks, tags, entity_links
 - Can WRITE: interactions, journal_entries, agent_work_log
-- Schema changes: Libby only — request via Pika  
+- Schema changes: Libby only — request via Mother  

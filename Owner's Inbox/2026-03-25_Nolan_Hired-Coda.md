@@ -24,4 +24,4 @@ Her profile was built directly from Pax's hiring brief for the Software Engineer
 
 ## Notes
 
-Coda is ready to receive work from Pika. Her default behavior is to clarify before building, flag tradeoffs explicitly, and default to the simplest workable solution. She is best used for: automation scripts, full-stack application development, API integrations, debugging existing code, and technical architecture advice.
+Coda is ready to receive work from Mother. Her default behavior is to clarify before building, flag tradeoffs explicitly, and default to the simplest workable solution. She is best used for: automation scripts, full-stack application development, API integrations, debugging existing code, and technical architecture advice.
